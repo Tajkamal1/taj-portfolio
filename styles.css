@@ -1,0 +1,459 @@
+/* ----------------------------
+        BASE STYLES & VARIABLES
+        ---------------------------- */
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to right, #0f172a, #1e293b);
+    color: white;
+    scroll-behavior: smooth;
+    min-height: 100vh;
+}
+
+ :root {
+    /* Base Colors (HSL values for Tailwind configuration) */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --primary: 263 70% 50%;
+    /* Violet/Purple for primary actions */
+    --accent: 12 76% 61%;
+    /* Orange/Red for accent colors */
+    --blue-glow: 189 100% 50%;
+    /* Cyan for signature glow */
+    /* UI Colors */
+    --muted: 240 5% 20%;
+    --border: 240 5% 30%;
+    --input: 240 10% 8%;
+    /* Shadows & Effects */
+    --shadow-glow: 0 0 25px hsl(var(--blue-glow)/0.8), 0 0 80px hsl(var(--blue-glow)/0.5);
+    --shadow-card: 0 10px 30px -10px hsl(var(--background)/0.8);
+    --shadow-hover: 0 20px 40px -15px hsl(var(--blue-glow)/0.4);
+}
+
+
+/* ----------------------------
+        CUSTOM UTILITY CLASSES
+        ---------------------------- */
+
+.gradient-card-bg {
+    background: linear-gradient(135deg, hsl(var(--primary)/0.05), hsl(var(--accent)/0.05));
+    border-radius: 1rem;
+}
+
+.text-gradient {
+    /* Applies to the blue/cyan text gradient */
+    background: linear-gradient(90deg, hsl(189 100% 50%), hsl(200 100% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-glow {
+    /* Applied to the Hero image */
+    box-shadow: var(--shadow-glow);
+    border: 4px solid hsl(var(--blue-glow)/0.5);
+}
+
+.shadow-card {
+    box-shadow: var(--shadow-card);
+}
+
+.transition-bounce {
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+/* ----------------------------
+        FLOATING DOTS (Visual Background Noise)
+        ---------------------------- */
+
+.floating-dot {
+    position: absolute;
+    border-radius: 50%;
+    background-color: hsl(var(--blue-glow));
+    opacity: 0.6;
+    filter: blur(4px);
+    animation: float 10s infinite ease-in-out alternate;
+    z-index: 10;
+}
+
+#dot-1 {
+    top: 15%;
+    left: 10%;
+    width: 14px;
+    height: 14px;
+    opacity: 0.7;
+    animation-delay: 0s;
+}
+
+#dot-2 {
+    top: 55%;
+    right: 5%;
+    width: 10px;
+    height: 10px;
+    opacity: 0.5;
+    animation-delay: 2s;
+}
+
+#dot-3 {
+    bottom: 10%;
+    left: 30%;
+    width: 16px;
+    height: 16px;
+    opacity: 0.8;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+        transform: translate(20px, 30px) rotate(10deg);
+    }
+}
+
+
+/* ----------------------------
+        ACADEMIC TIMELINE (ABOUT SECTION CSS)
+        ---------------------------- */
+
+.timeline-card {
+    /* Base styling for all cards (using Tailwind classes directly in HTML) */
+    position: relative;
+    padding: 25px 30px;
+    border-radius: 12px;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 0.5rem;
+    z-index: 1;
+    /* Ensure header is above the connector line */
+    position: relative;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.step-icon {
+    font-size: 1.8em;
+    margin-right: 15px;
+    line-height: 1;
+}
+
+.academic-level {
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-right: 15px;
+    letter-spacing: 0.5px;
+}
+
+.timeline-card p {
+    margin: 0;
+    font-size: 1em;
+    font-weight: 300;
+    opacity: 0.9;
+    z-index: 1;
+    position: relative;
+}
+
+
+/* Connector Line (Custom CSS required for pseudo-element) */
+
+.timeline-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    left: 45px;
+    /* Aligned with the step-icon on desktop */
+    width: 2px;
+    height: 30px;
+    /* Repeating gradient simulates a dashed line using the muted color */
+    background: repeating-linear-gradient( to bottom, hsl(var(--muted)/0.5), hsl(var(--muted)/0.5) 5px, transparent 5px, transparent 10px);
+    z-index: 0;
+}
+
+
+/* Responsive adjustment for the connector line on small screens */
+
+@media (max-width: 640px) {
+    /* Tailind sm: breakpoint */
+    .timeline-card:not(:last-child)::after {
+        left: 35px;
+    }
+}
+
+:root {
+    --accent: 249, 115, 22;
+    /* Tailwind orange-600 */
+}
+
+
+/* ========================================= */
+
+
+/* NEW: Showcase Box with White Border and Glow */
+
+
+/* ========================================= */
+
+.skill-showcase-box {
+    margin: 4rem auto;
+    max-width: 800px;
+    /* Slightly wider to accommodate bubbles */
+    padding: 3rem 1rem;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    /* White Border */
+    border-radius: 1.5rem;
+    background: rgba(10, 10, 10, 0.5);
+    /* Semi-transparent background */
+    /* White Glow Effect */
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.15), 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+
+/* ========================================= */
+
+
+/* CSS for Circular Bubble Arrangement */
+
+
+/* ========================================= */
+
+
+/* Base style for the skill bubbles */
+
+.skill-bubble {
+    /* Standard Size and Shape */
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    /* Center the text and make it legible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: white;
+    padding: 1rem;
+    /* Positioning baseline */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Initial center alignment */
+    /* Hover and Animation */
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+    z-index: 10;
+}
+
+
+/* Style for the main skill bubble (Center) */
+
+.skill-main {
+    width: 180px;
+    height: 180px;
+    font-size: 1.25rem;
+    /* Stronger central glow */
+    box-shadow: 0 0 50px rgba(var(--accent), 0.5), 0 0 30px rgba(var(--accent), 0.8);
+    z-index: 50;
+}
+
+
+/* Hover effect */
+
+.skill-bubble:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+    z-index: 60;
+    /* Use currentColor to reference the bubble's Tailwind background color for a nice glow */
+    box-shadow: 0 0 60px currentColor;
+}
+
+
+/* IMPORTANT: Define the dimensions and center the cluster */
+
+#skill-container {
+    /* Set a fixed square size to manage the circular arrangement */
+    height: 550px;
+    overflow: visible;
+    /* Allow shadows to extend */
+}
+
+
+/* Define the position of the 9 outer bubbles relative to the center */
+
+
+/* Positions are calculated to create a tight, overlapping circle. */
+
+
+/* Outer Radius for Large Screens (approx 180px) */
+
+#skill-1 {
+    transform: translate(calc(-50% - 130px), calc(-50% - 160px));
+    z-index: 20;
+}
+
+
+/* Top Left */
+
+#skill-2 {
+    transform: translate(calc(-50% + 50px), calc(-50% - 200px));
+    z-index: 30;
+}
+
+
+/* Top Center */
+
+#skill-3 {
+    transform: translate(calc(-50% + 190px), calc(-50% - 130px));
+    z-index: 20;
+}
+
+
+/* Top Right */
+
+#skill-4 {
+    transform: translate(calc(-50% + 220px), calc(-50% + 50px));
+    z-index: 10;
+}
+
+
+/* Right */
+
+#skill-6 {
+    transform: translate(calc(-50% - 230px), calc(-50% + 10px));
+    z-index: 10;
+}
+
+
+/* Left */
+
+#skill-7 {
+    transform: translate(calc(-50% - 150px), calc(-50% + 160px));
+    z-index: 20;
+}
+
+
+/* Bottom Left */
+
+#skill-8 {
+    transform: translate(calc(-50% + 50px), calc(-50% + 200px));
+    z-index: 30;
+}
+
+
+/* Bottom Center */
+
+#skill-9 {
+    transform: translate(calc(-50% + 190px), calc(-50% + 160px));
+    z-index: 20;
+}
+
+
+/* Bottom Right */
+
+#skill-10 {
+    transform: translate(calc(-50% + 20px), calc(-50% + 10px));
+    z-index: 40;
+}
+
+
+/* Overlaps Center, near main */
+
+
+/* Mobile Adjustments (smaller radius and bubble size) */
+
+@media (max-width: 768px) {
+    .skill-bubble {
+        width: 100px;
+        height: 100px;
+        font-size: 0.75rem;
+    }
+    .skill-main {
+        width: 130px;
+        height: 130px;
+        font-size: 1rem;
+    }
+    #skill-container {
+        height: 400px;
+        /* Adjust container height */
+    }
+    .skill-showcase-box {
+        padding: 1.5rem 0.5rem;
+        margin: 2rem auto;
+    }
+    /* Re-adjust positions for smaller screen circular clustering (smaller radius) */
+    #skill-1 {
+        transform: translate(calc(-50% - 90px), calc(-50% - 120px));
+    }
+    #skill-2 {
+        transform: translate(calc(-50% + 30px), calc(-50% - 150px));
+    }
+    #skill-3 {
+        transform: translate(calc(-50% + 140px), calc(-50% - 100px));
+    }
+    #skill-4 {
+        transform: translate(calc(-50% + 150px), calc(-50% + 30px));
+    }
+    #skill-6 {
+        transform: translate(calc(-50% - 150px), calc(-50% + 10px));
+    }
+    #skill-7 {
+        transform: translate(calc(-50% - 110px), calc(-50% + 110px));
+    }
+    #skill-8 {
+        transform: translate(calc(-50% + 30px), calc(-50% + 140px));
+    }
+    #skill-9 {
+        transform: translate(calc(-50% + 140px), calc(-50% + 130px));
+    }
+    #skill-10 {
+        transform: translate(calc(-50% + 20px), calc(-50% + 10px));
+    }
+}
+
+.project-card:hover .project-title {
+    color: #4f46e5;
+    /* Tailwind indigo-600 */
+}
+
+.section-header-text {
+    /* Consistent gradient for headings */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.experience-card {
+    border-left: 4px solid #4f46e5;
+    /* indigo-600 */
+}
+
+.cert-item:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+#cert {
+    margin: 40px;
+}

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taj Kamal - Software Developer Portfolio</title>
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css">
+
+
+
+    <!-- Tailwind Font Import (Inter) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        background: 'hsl(var(--background))',
+                        foreground: 'hsl(var(--foreground))',
+                        primary: 'hsl(var(--primary))',
+                        accent: 'hsl(var(--accent))',
+                        muted: 'hsl(var(--muted))',
+                        border: 'hsl(var(--border))',
+                        input: 'hsl(var(--input))',
+                    },
+                },
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-background text-foreground">
+
+    <!-- NAVIGATION BAR -->
+    <header id="main-header" class="sticky top-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border transition-transform duration-300 transform">
+        <nav class="container mx-auto px-4 lg:px-8 max-w-7xl h-20 flex items-center justify-between">
+            <a href="#home" class="text-2xl text-gradient">
+                Taj <span class="text-foreground/70 text-lg font-light hidden sm:inline">| Dev & Security</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-foreground/70 hover:text-primary transition-colors font-medium">Home</a>
+                <a href="#about" class="text-foreground/70 hover:text-primary transition-colors font-medium">About</a>
+                <a href="#skills" class="text-foreground/70 hover:text-primary transition-colors font-medium">Skills</a>
+                <a href="#certifications" class="text-foreground/70 hover:text-primary transition-colors font-medium">certifications</a>
+                <a href="#projects" class="text-foreground/70 hover:text-primary transition-colors font-medium">Projects</a>
+                <a href="#contact" class="text-foreground/70 hover:text-primary transition-colors font-medium">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-foreground/70 hover:text-primary p-2 rounded-lg transition-colors" aria-label="Toggle menu">
+                <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu-drawer" class="hidden absolute w-full bg-background md:hidden flex-col items-center border-t border-border shadow-xl">
+            <a href="#home" onclick="closeMobileMenu()" class="block w-full text-center py-3 text-lg text-foreground/70 hover:bg-primary/10 hover:text-primary transition-colors">Home</a>
+            <a href="#about" onclick="closeMobileMenu()" class="block w-full text-center py-3 text-lg text-foreground/70 hover:bg-primary/10 hover:text-primary transition-colors">About</a>
+            <a href="#skills" onclick="closeMobileMenu()" class="block w-full text-center py-3 text-lg text-foreground/70 hover:bg-primary/10 hover:text-primary transition-colors">Skills</a>
+            <a href="#projects" onclick="closeMobileMenu()" class="block w-full text-center py-3 text-lg text-foreground/70 hover:bg-primary/10 hover:text-primary transition-colors">Projects</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="block w-full text-center py-3 text-lg text-foreground/70 hover:bg-primary/10 hover:text-primary transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION (Updated with Glow and Particles) -->
+        <section id="home" class="relative container mx-auto py-24 px-4 lg:px-8 max-w-7xl min-h-[calc(100vh-80px)] flex items-center">
+
+            <!-- Floating Dots -->
+            <div id="dot-1" class="floating-dot"></div>
+            <div id="dot-2" class="floating-dot"></div>
+            <div id="dot-3" class="floating-dot"></div>
+
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-16 w-full z-20">
+
+                <!-- Image Section (Updated Glow) -->
+                <div class="relative order-1 lg:order-1 flex justify-center lg:justify-start">
+                    <!-- Image Wrapper with Glow -->
+                    <div class="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden shadow-glow transition-bounce hover:scale-[1.02]">
+                        <img src="Tajkamal.png" alt="Developer" class="w-full h-full object-cover rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/500x500/1c1c27/fff?text=Photo+Unavailable';" />
+                    </div>
+                </div>
+
+                <!-- Text and Actions Section (Content Updated) -->
+                <div class="flex-1 order-2 lg:order-1 pt-4 lg:pt-0 text-center lg:text-left">
+                    <p class="text-lg font-medium text-primary mb-2">
+                        <span>👋</span> HELLO, I'M
+                    </p>
+                    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-2 leading-tight">
+                        Taj Kamal
+                    </h1>
+                    <br>
+                    <h2 class="text-2xl md:text-4xl font-semibold text-gradient mb-6">
+                        And I'm a Software Developer
+                    </h2>
+                    <p class="text-lg text-foreground/70 max-w-xl lg:max-w-2xl mx-auto lg:mx-0 mb-8">
+                        I create stunning digital experiences with modern web technologies. Passionate about clean code, beautiful design, and innovative solutions that make a difference.
+                    </p>
+
+                    <!-- Social Icons -->
+                    <div class="flex justify-center lg:justify-start space-x-6 mb-8">
+                        <a href="https://www.facebook.com/share/1BipcTgTCd/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-110"><i data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a href="https://www.instagram.com/tajkamal_143?igsh=cW1vMW05MzZ6ZGxi&utm_source=qr" target="_blank" rel="noopener noreferrer" class="text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-110"><i data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-110"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                        <a href="https://www.linkedin.com/in/gagguturu-tajkamal-18191b2b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" class="text-foreground/70 hover:text-primary transition-all duration-300 hover:scale-110"><i data-lucide="twitter" class="w-6 h-6"></i></a>
+                    </div>
+
+                    <div class="flex justify-center lg:justify-start space-x-4">
+                        <!-- Resume Button (Using Tailwind blue class for visual) -->
+                        <a href="Taj_Resume.pdf" download="My_Professional_Resume.pdf" class="inline-flex items-center justify-center rounded-lg font-semibold px-8 py-3 text-base bg-indigo-600 text-white hover:bg-indigo-700 shadow-xl transition-all duration-300 transform hover:scale-[1.05]">
+                        Download Resume
+                        </a>
+                        <a href="#contact" class="inline-flex items-center justify-center rounded-lg font-semibold px-6 py-3 text-base border border-border text-primary hover:bg-primary/10 transition-all duration-300">
+                            Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+                <i data-lucide="chevron-down" class="w-6 h-6 text-foreground/70 animate-bounce"></i>
+            </div>
+
+        </section>
+
+        <!-- The rest of the page starts here, inside the original background container -->
+        <div class="bg-background">
+            <!-- ABOUT AND SKILLS SECTION -->
+            <section id="about" class="container mx-auto py-20 px-4 lg:px-8 max-w-7xl">
+                <h2 class="text-4xl font-bold mb-4 text-center">
+                    About <span class="text-gradient">Me</span>
+                </h2>
+                <p class="text-xl text-foreground/70 max-w-3xl mx-auto text-center mb-16">
+                    I'm driven by a passion for technology and a desire to build things that matter.
+                </p>
+
+                <div class="container mx-auto px-4 max-w-5xl mb-20">
+                    <!-- Main Content Card - Adjusted to use theme-consistent card style -->
+                    <div class="gradient-card-bg p-8 md:p-12 rounded-2xl shadow-2xl border border-border transform transition duration-500 hover:scale-[1.01]">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                            <!-- Profile Image / Placeholder -->
+                            <div class="md:col-span-1 flex justify-center items-start">
+                                <img src="about-pic.png" alt="Profile Picture Placeholder" class="rounded-xl w-full max-w-xs shadow-lg object-cover aspect-square" onerror="this.onerror=null; this.src='https://placehold.co/300x300/4F46E5/FFFFFF?text=User';">
+                            </div>
+
+                            <!-- Detailed Bio -->
+                            <div class="md:col-span-2 space-y-6">
+                                <!-- SUBHEADING -->
+                                <p class="text-xl font-semibold text-primary border-b border-border pb-3 mb-4">
+                                    Driven Developer | Aspiring Ethical Hacker.
+                                </p>
+
+                                <!-- FIRST PARAGRAPH (Introduction & Achievements) -->
+                                <p class="text-foreground/70 leading-relaxed">
+                                    Hello! I am a passionate developer with a strong foundation in <b>Full Stack Development</b>. My commitment to excellence is proven by my academic achievement—passing my <b>Diploma with First Division</b>—and my professional
+                                    recognition, having received the
+                                    <b>Rising Award</b> during my internship at <b>GND Solutions.</b> These achievements drive my current work in building robust and functional applications. </p>
+
+                                <!-- SECOND PARAGRAPH (Expertise & Pivot to Cyber Security) -->
+                                <p class="text-foreground/70 leading-relaxed">
+                                    My technical background covers both traditional and modern stacks, including
+                                    <b>HTML, CSS, JavaScript, PHP, Angular</b>, and local server management with <b>XAMPP/WAMP</b>. I also specialize in the MERN stack (<b>React.js, Node.js, MongoDB API</b>). Today, I am channeling this development expertise
+                                    into my primary interest: the<b>Cyber Security field*</b>, with a focused dedication to <b>Ethical Hacking</b>. I aim to identify vulnerabilities and build truly secure digital systems from the ground up. </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Academic Journey Timeline -->
+                    <div class="mt-20 max-w-4xl mx-auto">
+                        <h2 class="text-4xl font-bold mb-10 text-center">
+                            Academic <span class="text-gradient">Journey</span>
+                        </h2>
+
+                        <section class="card-timeline flex flex-col gap-8 w-full">
+
+                            <!-- Step 1: SSC -->
+                            <div class="timeline-card bg-blue-500 shadow-xl shadow-blue-500/30">
+                                <div class="card-header">
+                                    <span class="step-icon">🎓</span>
+                                    <span class="academic-level">SSC</span>
+                                    <h3>ZPHS Boys High School</h3>
+                                </div>
+                                <p>Yerraguntla, Kadapa (YSRR District)</p>
+                            </div>
+
+                            <!-- Step 2: DIPLOMA -->
+                            <div class="timeline-card bg-accent shadow-xl shadow-accent/30">
+                                <div class="card-header">
+                                    <span class="step-icon">💻</span>
+                                    <span class="academic-level">DIPLOMA</span>
+                                    <h3>Loyola Polytechnic</h3>
+                                </div>
+                                <p>Computer Science & Engineering - Pulivendula, YSRR</p>
+                            </div>
+
+                            <!-- Step 3: B.TECH -->
+                            <div class="timeline-card bg-green-600 shadow-xl shadow-green-600/30">
+                                <div class="card-header">
+                                    <span class="step-icon">🛡️</span>
+                                    <span class="academic-level">B.TECH</span>
+                                    <h3>Madanapalle Institute of Technology</h3>
+                                </div>
+                                <p>Cyber Security - Angallu, Madanapalle (Current Focus)</p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+            <section id="skills">
+
+                <div class="skill-showcase-box mx-auto">
+
+                    <main class="py-4">
+                        <div class="container mx-auto max-w-7xl">
+                            <h1 class="text-4xl font-extrabold text-center mb-4">
+                                My <span class="text-accent">Interconnected</span> Skillset
+                            </h1>
+                            <p class="text-xl text-foreground/70 max-w-3xl mx-auto text-center mb-16">
+                                These are the 10 core skills that form my development and security stack.
+                            </p>
+                        </div>
+
+                        <!-- SKILLS BUBBLE CONTAINER -->
+                        <div id="skill-container" class="relative w-full max-w-5xl mx-auto flex justify-center items-center">
+
+                            <!-- Skill 5: Main Framework (Center) - Slightly Larger -->
+                            <div id="main-skill" class="skill-bubble skill-main bg-accent">
+                                <p class="text-xl font-bold">Skill Set</p>
+                            </div>
+
+                            <!-- Outer 9 Skills arranged in a circle, updated with your labels -->
+                            <div id="skill-1" class="skill-bubble bg-html-css">
+                                <p>HTML/CSS/JS</p>
+                            </div>
+                            <div id="skill-2" class="skill-bubble bg-javascript">
+                                <p>ETHICAL HACKING</p>
+                            </div>
+                            <div id="skill-3" class="skill-bubble bg-node">
+                                <p>MERN STACK</p>
+                            </div>
+                            <div id="skill-4" class="skill-bubble bg-mongodb">
+                                <p>JAVA</p>
+                            </div>
+                            <div id="skill-6" class="skill-bubble bg-angular-php">
+                                <p>UI/UX</p>
+                            </div>
+                            <div id="skill-7" class="skill-bubble bg-security">
+                                <p>C/C++</p>
+                            </div>
+                            <div id="skill-8" class="skill-bubble bg-testing">
+                                <p>AI Model Training</p>
+                            </div>
+                            <div id="skill-9" class="skill-bubble bg-linux-docker">
+                                <p>PYTHON</p>
+                            </div>
+
+                        </div>
+                    </main>
+                </div>
+            </section>
+
+            <!-- 
+        ========================================================
+        CERTIFICATIONS & LICENSES SECTION START
+        ========================================================
+        -->
+
+            <section id="certifications" class="py-12 md:py-16">
+                <header class="text-center mb-12 md:mb-16">
+                    <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
+                        <span class="section-header-text bg-gradient-to-r from-teal-600 to-cyan-600">
+                        Certifications & Licenses
+                    </span>
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+                        Validated skills and expertise from industry-leading platforms and institutions.
+                    </p>
+                </header>
+
+                <div id="cert" class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
+
+                    <!-- Group 1: HackerRank Skills -->
+                    <div class="cert-item bg-white p-5 rounded-xl shadow-md border-b-4 border-indigo-400 transition duration-300 ">
+                        <p class="text-xs font-semibold text-gray-500 mb-1 ">HackerRank</p>
+                        <p class="text-lg font-bold text-gray-800 ">Java, Python, SQL & Problem Solving</p>
+                    </div>
+
+                    <!-- Item 2: Vertex AI -->
+                    <div class="cert-item bg-white p-5 rounded-xl shadow-md border-b-4 border-purple-400 transition duration-300 ">
+                        <p class="text-xs font-semibold text-gray-500 mb-1 ">Google Vertex AI</p>
+                        <p class="text-lg font-bold text-gray-800 ">Prompt Design</p>
+                    </div>
+
+                    <!-- Item 3: Ethical Hacking Workshop -->
+                    <div class="cert-item bg-white p-5 rounded-xl shadow-md border-b-4 border-red-400 transition duration-300 ">
+                        <p class="text-xs font-semibold text-gray-500 mb-1 ">JNTUA Sarvagnan 2K23</p>
+                        <p class="text-lg font-bold text-gray-800 ">Ethical Hacking Workshop</p>
+                    </div>
+
+                    <!-- Item 4: Tech Mahindra Cyber Security -->
+                    <div class="cert-item bg-white p-5 rounded-xl shadow-md border-b-4 border-green-400 transition duration-300 ">
+                        <p class="text-xs font-semibold text-gray-500 mb-1 ">Skill India,Tech Mahindra Foundation</p>
+                        <p class="text-lg font-bold text-gray-800 ">Cyber Security Certification</p>
+                    </div>
+
+                    <!-- Item 5: Reliance Front End -->
+                    <div class="cert-item bg-white p-5 rounded-xl shadow-md border-b-4 border-yellow-400 transition duration-300 ">
+                        <p class="text-xs font-semibold text-gray-500 mb-1 ">Reliance Foundation</p>
+                        <p class="text-lg font-bold text-gray-800 ">Front End Development</p>
+                    </div>
+
+                    <!-- Item 6: MeitY Quiz -->
+                    <div class="cert-item bg-white p-5 rounded-xl shadow-md border-b-4 border-blue-400 transition duration-300 ">
+                        <p class="text-xs font-semibold text-gray-500 mb-1 ">MeitY, Government of India</p>
+                        <p class="text-lg font-bold text-gray-800 ">Cyber Security Essential Quiz</p>
+                    </div>
+
+                    <!-- Item 7: NASSCOM Digital 101 -->
+                    <div class="cert-item bg-white p-5 rounded-xl shadow-md border-b-4 border-pink-400 transition duration-300 ">
+                        <p class="text-xs font-semibold text-gray-500 mb-1 ">NASSCOM</p>
+                        <p class="text-lg font-bold text-gray-800 ">Digital 101 Gold Certification</p>
+                    </div>
+
+                    <!-- Item 8: Udemy Database Management -->
+                    <div class="cert-item bg-white p-5 rounded-xl shadow-md border-b-4 border-teal-400 transition duration-300 ">
+                        <p class="text-xs font-semibold text-gray-500 mb-1 ">Udemy</p>
+                        <p class="text-lg font-bold text-gray-800 ">Database Management Essential Certification</p>
+                    </div>
+
+                    <!-- Placeholder/Expansion slot 9 -->
+                    <div class="cert-item bg-white p-5 rounded-xl shadow-md border-b-4 border-teal-400 transistion duration-300 ">
+                        <p class="text-xs font-semibold text-gray-500 mb-1 ">meity,Government of India </p>
+                        <p class="text-lg font-bold text-gray-800 ">Cyber Hygiene Practices</p>
+                    </div>
+
+                    <!-- Placeholder/Expansion slot 10 -->
+                    <div class="cert-item bg-white p-5 rounded-xl shadow-md border-b-4 border-teal-400 transistion duration-300 ">
+                        <p class="text-xs font-semibold text-gray-500 mb-1 ">NIIT Foundation</p>
+                        <p class="text-lg font-bold text-gray-800 ">Digital Productivity</p>
+                    </div>
+
+
+                </div>
+            </section>
+            <!-- CERTIFICATIONS & LICENSES SECTION END -->
+
+
+            <!-- PROJECTS SECTION -->
+            <section id="projects" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 ">
+                <div class="max-w-7xl mx-auto ">
+
+                    <!-- Section Header -->
+                    <header class="text-center mb-12 md:mb-16 ">
+                        <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight ">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 ">
+                        Innovative Solutions & Projects
+                    </span>
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto ">
+                            A selection of recent work demonstrating forward-thinking solutions and technological innovation.
+                        </p>
+                    </header>
+
+                    <!-- Projects Grid Container -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+
+                        <!-- Project Card 1: AI Luggage Detection (YOLOv5, Flask) -->
+                        <a href="#link-to-luggage-project " target="_blank " class="block group ">
+                            <div class="project-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-indigo-500 hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] ">
+                                <!-- Icon: AI/Detection (using a box/3D object for detection) -->
+                                <div class="text-indigo-600 mb-4 ">
+                                    <svg class="w-10 h-10 " fill="none " stroke="currentColor " viewBox="0 0 24 24 " xmlns="http://www.w3.org/2000/svg "><path stroke-linecap="round " stroke-linejoin="round " stroke-width="2 " d="M20 7l-8-4-8 4m16 0l-8
+                    4m8-4v10l-8 4m0-10L4 7m4 4v10m0 0l-8 4m8-4l-8 4m-4-8V7a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H7a2 2 0 01-2-2v-3 "></path></svg>
+                                </div>
+                                <h3 class="project-title text-2xl font-bold text-gray-900 mb-3 transition duration-300 ">
+                                    AI Luggage Detection System
+                                </h3>
+                                <p class="text-gray-600 mb-4 text-base ">
+                                    Developed an object detection model using <span class="font-semibold text-indigo-600 ">YOLOv5</span> and <span class="font-semibold text-indigo-600 ">Python</span> to detect and track luggage in real-time. Built a robust
+                                    backend API using the <span class="font-semibold text-indigo-600 ">Flask</span> framework.
+                                </p>
+
+                                <!-- Technology Tags -->
+                                <div class="flex flex-wrap gap-2 mb-6 ">
+                                    <span class="px-3 py-1 text-xs font-medium bg-green-100 text-green-800 rounded-full ">YOLOv5</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full ">Flask</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-red-100 text-red-800 rounded-full ">Python</span>
+                                </div>
+
+                                <!-- Call to Action Link -->
+                                <div class="mt-auto ">
+                                    <span class="inline-flex items-center text-indigo-600 font-semibold text-sm transition group-hover:underline ">
+                                View Details
+                                <svg class="w-4 h-4 ml-1 " fill="none " stroke="currentColor " viewBox="0 0 24 24 " xmlns="http://www.w3.org/2000/svg "><path stroke-linecap="round " stroke-linejoin="round " stroke-width="2 " d="M17 8l4 4m0 0l-4 4m4-4H3 "></path></svg>
+                            </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Project Card 2: Blogger App (MERN) -->
+                        <a href="#link-to-blogger-app " target="_blank " class="block group ">
+                            <div class="project-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-purple-500 hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] ">
+                                <!-- Icon: Writing/Document -->
+                                <div class="text-purple-600 mb-4 ">
+                                    <svg class="w-10 h-10 " fill="none " stroke="currentColor " viewBox="0 0 24 24 " xmlns="http://www.w3.org/2000/svg "><path stroke-linecap="round " stroke-linejoin="round " stroke-width="2 " d="M11 5H6a2 2 0 00-2 2v11a2
+                    2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z "></path></svg>
+                                </div>
+                                <h3 class="project-title text-2xl font-bold text-gray-900 mb-3 transition duration-300 ">
+                                    Blogger Application
+                                </h3>
+                                <p class="text-gray-600 mb-4 text-base ">
+                                    A complete blogging platform built with the <span class="font-semibold text-indigo-600 ">MERN</span> stack, providing features for user authentication, rich text editing, and post management with a <span class="font-semibold
+                    text-indigo-600 ">React</span> frontend.
+                                </p>
+
+                                <!-- Technology Tags -->
+                                <div class="flex flex-wrap gap-2 mb-6 ">
+                                    <span class="px-3 py-1 text-xs font-medium bg-yellow-100 text-yellow-800 rounded-full ">React</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-gray-100 text-gray-800 rounded-full ">Node.js</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-pink-100 text-pink-800 rounded-full ">MongoDB</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-purple-100 text-purple-800 rounded-full ">MERN Stack</span>
+                                </div>
+
+                                <!-- Call to Action Link -->
+                                <div class="mt-auto ">
+                                    <span class="inline-flex items-center text-purple-600 font-semibold text-sm transition group-hover:underline ">
+                                View Details
+                                <svg class="w-4 h-4 ml-1 " fill="none " stroke="currentColor " viewBox="0 0 24 24 " xmlns="http://www.w3.org/2000/svg "><path stroke-linecap="round " stroke-linejoin="round " stroke-width="2 " d="M17 8l4 4m0 0l-4 4m4-4H3 "></path></svg>
+                            </span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <!-- Project Card 3: AspireCyber E2E (HTML, CSS, JS, Mongo) -->
+                        <a href="#link-to-aspirecyber " target="_blank " class="block group ">
+                            <div class="project-card bg-white p-6 rounded-xl shadow-lg border-t-4 border-teal-500 hover:shadow-2xl transition duration-300 transform hover:scale-[1.02] ">
+                                <!-- Icon: Code/Web Development -->
+                                <div class="text-teal-600 mb-4 ">
+                                    <svg class="w-10 h-10 " fill="none " stroke="currentColor " viewBox="0 0 24 24 " xmlns="http://www.w3.org/2000/svg "><path stroke-linecap="round " stroke-linejoin="round " stroke-width="2 " d="M10 20l4-16m4 4l4 4-4
+                    4M6 16l-4-4 4-4 "></path></svg>
+                                </div>
+                                <h3 class="project-title text-2xl font-bold text-gray-900 mb-3 transition duration-300 ">
+                                    AspireCyber E2E Web Portal
+                                </h3>
+                                <p class="text-gray-600 mb-4 text-base ">
+                                    Developed a responsive end-to-end web experience using core technologies like <span class="font-semibold text-indigo-600 ">HTML</span>, <span class="font-semibold text-indigo-600
+                    ">CSS</span>, and vanilla <span class="font-semibold text-indigo-600 ">JavaScript</span>. Implemented data persistence using <span class="font-semibold text-indigo-600 ">MongoDB</span> for storage.
+                                </p>
+
+                                <!-- Technology Tags -->
+                                <div class="flex flex-wrap gap-2 mb-6 ">
+                                    <span class="px-3 py-1 text-xs font-medium bg-cyan-100 text-cyan-800 rounded-full ">HTML</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-orange-100 text-orange-800 rounded-full ">CSS</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-indigo-100 text-indigo-800 rounded-full ">JavaScript</span>
+                                    <span class="px-3 py-1 text-xs font-medium bg-gray-200 text-gray-800 rounded-full ">MongoDB</span>
+                                </div>
+
+                                <!-- Call to Action Link -->
+                                <div class="mt-auto ">
+                                    <span class="inline-flex items-center text-teal-600 font-semibold text-sm transition group-hover:underline ">
+                                View Details
+                                <svg class="w-4 h-4 ml-1 " fill="none " stroke="currentColor " viewBox="0 0 24 24 " xmlns="http://www.w3.org/2000/svg "><path stroke-linecap="round " stroke-linejoin="round " stroke-width="2 " d="M17 8l4 4m0 0l-4 4m4-4H3 "></path></svg>
+                            </span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+                    <!-- End Projects Grid Container -->
+
+                </div>
+            </section>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+
+                <!-- 
+        ========================================================
+        EXPERIENCE SECTION START
+        ========================================================
+        -->
+                <section id="experience " class="pt-16 md:pt-20 pb-12 ">
+                    <header class="text-center mb-12 md:mb-16 ">
+                        <h2 class="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight ">
+                            <span class="section-header-text bg-gradient-to-r from-indigo-600 to-purple-600 ">
+                        Professional Experience
+                    </span>
+                        </h2>
+                        <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto ">
+                            Demonstrated leadership and technical proficiency across dynamic projects.
+                        </p>
+                    </header>
+
+                    <div class="space-y-12 ">
+
+                        <!-- Experience Item 1: Blogger Application -->
+                        <div class="experience-card bg-white p-6 md:p-8 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl ">
+                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 ">
+                                <h3 class="text-2xl font-bold text-gray-900 ">Internship: Full-Stack Blogger Application</h3>
+                                <p class="text-sm font-medium text-indigo-600 mt-1 md:mt-0 ">GND Solutions, Bengaluru</p>
+                            </div>
+
+                            <p class="text-lg font-semibold text-indigo-700 mb-3 ">Role: Team Leader & MERN Stack Developer</p>
+
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700 ">
+                                <li>Led a development team in creating a <span class="font-semibold text-indigo-600 ">Blogger Application</span> using the <span class="font-semibold text-indigo-600 ">MERN Stack</span> (<span class="font-semibold text-indigo-600 ">MongoDB, Express.js, React, Node.js</span>).</li>
+                                <li>Maintained and implemented creative features, focusing on robust user experiences and efficient backend architecture.</li>
+                                <li>Gained extensive hands-on experience in full-stack development and modern JavaScript frameworks.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience Item 2: AI Luggage Detection -->
+                        <div class="experience-card bg-white p-6 md:p-8 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl ">
+                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 ">
+                                <h3 class="text-2xl font-bold text-gray-900 ">Project: MSME AI Luggage Detection</h3>
+                                <p class="text-sm font-medium text-indigo-600 mt-1 md:mt-0 ">AI & Computer Vision Domain</p>
+                            </div>
+
+                            <p class="text-lg font-semibold text-indigo-700 mb-3 ">Role: Team Leader & AI Model Trainer</p>
+
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700 ">
+                                <li>Spearheaded the development of an object detection model, gaining deep experience in <span class="font-semibold text-indigo-600 ">AI workflows</span>, <span class="font-semibold text-indigo-600 ">model training</span>,
+                                    and
+                                    <span class="font-semibold text-indigo-600 ">YOLOv5</span> implementation.</li>
+                                <li>Mastered the practical application and functionality of various <span class="font-semibold text-indigo-600 ">AI algorithms</span>.</li>
+                                <li>Enhanced <span class="font-semibold text-indigo-600 ">presentation skills</span> by performing a key role in team briefings and final project showcases.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Experience Item 3: AspireCyber E2E Portal -->
+                        <div class="experience-card bg-white p-6 md:p-8 rounded-xl shadow-lg transition duration-300 hover:shadow-2xl ">
+                            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 ">
+                                <h3 class="text-2xl font-bold text-gray-900 ">Hackathon: AspireCyber E2E Portal</h3>
+                                <p class="text-sm font-medium text-indigo-600 mt-1 md:mt-0 ">Pan India Hackathon</p>
+                            </div>
+
+                            <p class="text-lg font-semibold text-indigo-700 mb-3 ">Role: Solo Developer</p>
+
+                            <ul class="list-disc pl-5 space-y-2 text-gray-700 ">
+                                <li>Single-handedly created a portal featuring end-to-end cyber security courses, mapping tools, and helpful resources related to ethical hacking.</li>
+                                <li>Gained comprehensive experience in full lifecycle web development, from design using <span class="font-semibold text-indigo-600 ">HTML, CSS, JavaScript</span> to deployment and content management.</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </section>
+                <!-- EXPERIENCE SECTION END -->
+                <div class="my-16 md:my-20 text-center max-w-4xl mx-auto p-6 bg-indigo-50 rounded-xl shadow-inner ">
+                    <p class="text-xl md:text-2xl italic font-medium text-gray-800 ">
+                        &ldquo;I am consistently on a path of lifelong learning.&rdquo;
+                    </p>
+                </div>
+
+                <hr class="my-16 border-gray-300 ">
+
+
+
+
+            </div>
+
+
+
+            <!-- CONTACT SECTION -->
+            <section id="contact" class="container mx-auto py-20 px-4 lg:px-8 max-w-7xl ">
+                <h2 class="text-4xl font-bold mb-4 text-center ">
+                    Get In <span class="text-gradient ">Touch</span>
+                </h2>
+                <p class="text-xl text-foreground/70 max-w-3xl mx-auto text-center mb-16 ">
+                    Let's discuss your next project or collaboration opportunity.
+                </p>
+
+                <div class="flex flex-col lg:flex-row gap-12 max-w-5xl mx-auto ">
+
+                    <!-- Contact Info (Left Side) -->
+                    <div class="flex-1 gradient-card-bg p-8 rounded-xl shadow-card border border-border ">
+                        <h3 class="text-2xl font-semibold mb-6 text-primary ">Contact Information</h3>
+                        <div class="space-y-6 ">
+                            <div class="flex items-start space-x-4 ">
+                                <i data-lucide="mail " class="text-accent w-6 h-6 mt-1 flex-shrink-0 "></i>
+                                <div>
+                                    <p class="font-medium text-lg text-foreground ">Email</p>
+                                    <a href="mailto:gagguturutajkamal06@gmail.com " class="text-foreground/70 hover:text-primary transition-colors ">gagguturutajkamal06@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4 ">
+                                <i data-lucide="phone " class="text-accent w-6 h-6 mt-1 flex-shrink-0 "></i>
+                                <div>
+                                    <p class="font-medium text-lg text-foreground ">Phone</p>
+                                    <a href="tel:+917995119306 " class="text-foreground/70 hover:text-primary transition-colors ">+91 7995119306</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4 ">
+                                <i data-lucide="map-pin " class="text-accent w-6 h-6 mt-1 flex-shrink-0 "></i>
+                                <div>
+                                    <p class="font-medium text-lg text-foreground ">Location</p>
+                                    <p class="text-foreground/70 ">Kadapa, Andhra Pradesh, India</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-border py-8 mt-12 bg-background ">
+        <div class="container mx-auto px-4 lg:px-8 max-w-7xl text-center ">
+            <p class="text-foreground/50 mb-4 ">
+                &copy; <span id="current-year "></span> Taj Kamal. All rights reserved.
+            </p>
+        </div>
+    </footer>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'background': '#0a0a0a',
+                        'foreground': '#f3f4f6',
+                        'accent': 'rgb(249, 115, 22)', // orange-600 for main bubble
+                        'html-css': 'rgb(52, 211, 153)', // green-400
+                        'javascript': 'rgb(239, 68, 68)', // red-500
+                        'node': 'rgb(168, 85, 247)', // violet-500
+                        'mongodb': 'rgb(59, 130, 246)', // blue-500
+                        'angular-php': 'rgb(251, 191, 36)', // yellow-500
+                        'security': 'rgb(20, 184, 166)', // teal-500
+                        'testing': 'rgb(99, 102, 241)', // indigo-500
+                        'linux-docker': 'rgb(236, 72, 153)', // pink-500
+                        'git': 'rgb(249, 115, 22)', // orange-500
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+
+        // ------------------------------------
+        // Mobile Menu Toggle Logic
+        // ------------------------------------
+        const menuButton = document.getElementById('mobile-menu-button');
+        const menuDrawer = document.getElementById('mobile-menu-drawer');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        function toggleMobileMenu() {
+            const isHidden = menuDrawer.classList.contains('hidden');
+            if (isHidden) {
+                menuDrawer.classList.remove('hidden');
+                menuDrawer.classList.add('flex');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                closeMobileMenu();
+            }
+        }
+
+        function closeMobileMenu() {
+            menuDrawer.classList.add('hidden');
+            menuDrawer.classList.remove('flex');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+
+        // Event listeners
+        menuButton.addEventListener('click', toggleMobileMenu);
+
+        // Close menu on link click (for both mobile links and desktop links)
+        document.querySelectorAll('a[href^="# "]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                // Smooth scroll effect
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                if (!menuDrawer.classList.contains('hidden')) {
+                    closeMobileMenu();
+                }
+            });
+        });
+
+        const header = document.getElementById('main-header');
+        let lastScrollY = window.scrollY;
+        // The header height is h-20, which is 80px (5rem). We will translate it by -80px when scrolling down.
+        const HIDE_OFFSET = 100; // Only start hiding after scrolling 100px past the top
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+
+            // SCROLLING DOWN
+            // If the current position is greater than the last position AND we are far enough from the top
+            if (currentScrollY > lastScrollY && currentScrollY > HIDE_OFFSET) {
+                // Hide the header: use an arbitrary utility class for -80px translation (full height)
+                header.style.transform = 'translateY(-80px)';
+            }
+            // SCROLLING UP or at the top
+            else {
+                // Show the header
+                header.style.transform = 'translateY(0)';
+            }
+
+            // Update the last known scroll position
+            lastScrollY = currentScrollY;
+        });
+    </script>
+</body>
+
+</html>
